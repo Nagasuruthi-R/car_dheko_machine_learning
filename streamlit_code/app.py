@@ -34,7 +34,15 @@ unique_insurance_periods = df['Insurance_Validity_Period'].unique()
 
 
 
-st.header("Enter Car Details for Prediction")
+st.header("Random Forest Regressors Prediction")
+
+# Select unique categorical values from the dataframe
+Car_Model = st.sidebar.selectbox("Car Model", unique_car_models)
+Fuel_Type = st.sidebar.selectbox("Fuel Type", unique_fuel_types)
+Transmission_Type = st.sidebar.selectbox("Transmission Type", unique_transmission_types)
+Battery_Type = st.sidebar.selectbox("Battery Type", unique_battery_types)
+city = st.sidebar.selectbox("City", unique_cities)
+Insurance_Validity_Period = st.sidebar.selectbox("Insurance Validity Period", unique_insurance_periods)
 
 Number_of_Seats = st.sidebar.number_input("Number of Seats", min_value=2, max_value=10, value=5)
 Mileage = st.sidebar.number_input("Mileage (km/l)", min_value=0.0, max_value=50.0, value=25.10)
@@ -46,16 +54,15 @@ Kilometers_Driven = st.sidebar.number_input("Kilometers Driven", min_value=0, ma
 Number_of_Owners = st.sidebar.number_input("Number of Owners", min_value=1, max_value=5, value=1)
 Model_Year = st.sidebar.number_input("Model Year", min_value=1990, max_value=2024, value=2021)
 
-# Select unique categorical values from the dataframe
-Car_Model = st.sidebar.selectbox("Car Model", unique_car_models)
-Fuel_Type = st.sidebar.selectbox("Fuel Type", unique_fuel_types)
-Transmission_Type = st.sidebar.selectbox("Transmission Type", unique_transmission_types)
-Battery_Type = st.sidebar.selectbox("Battery Type", unique_battery_types)
-city = st.sidebar.selectbox("City", unique_cities)
-Insurance_Validity_Period = st.sidebar.selectbox("Insurance Validity Period", unique_insurance_periods)
 
 # # Organize input data into a DataFrame
 custom_df = pd.DataFrame([{
+    'city': city,
+    'Model_Year': Model_Year,
+    'Car_Model': Car_Model,
+    'Fuel_Type': Fuel_Type,
+    'Transmission_Type': Transmission_Type,
+    'Battery_Type': Battery_Type,
     'Number_of_Seats': Number_of_Seats,
     'Mileage_(km/l)': Mileage,
     'Engine_Capacity': Engine_Capacity,
@@ -64,12 +71,6 @@ custom_df = pd.DataFrame([{
     'Wheel_Size': Wheel_Size,
     'Kilometers_Driven': Kilometers_Driven,
     'Number_of_Owners': Number_of_Owners,
-    'Model_Year': Model_Year,
-    'Car_Model': Car_Model,
-    'Fuel_Type': Fuel_Type,
-    'Transmission_Type': Transmission_Type,
-    'Battery_Type': Battery_Type,
-    'city': city,
     'Insurance_Validity_Period': Insurance_Validity_Period
 }])
 
@@ -77,7 +78,7 @@ st.write("Custom input data:")
 st.dataframe(custom_df)
 
 # # Make prediction using the pipeline model
-if st.button("Predict"):
+if st.button("Old Car Price Prediction Value"):
     prediction = model.predict(custom_df)
     st.success(f"Predicted Value: {prediction[0]}")
 

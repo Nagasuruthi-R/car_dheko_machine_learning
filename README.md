@@ -7,18 +7,18 @@ building an efficient regression model to accurately estimate car prices. The go
 prediction model that would assist users in making informed decisions about buying or selling used cars, 
 providing a transparent and reliable price estimate.
 ## 2.Importing Libraries:
-•	pandas: for handling and manipulating DataFrames.
-•	ast: to convert strings containing python dictionaries to actual dictionaries.
-•	glop and os: to search and retrieve the file paths from the file system.
-•	numpy:  for handling numerical computation and missing values (e.g., np.NaN).
-•	re: Used for regular expression to process text data (e.g., removing units like ‘CC’, ‘ Kmpl’)
-•	matplotlib: used for creating statistical visualizations.
-•	Seaborn: For creating a statistical visualization.
-•	‘OneHotEncoder and LabelEncoder’: For encoding categorical variables into numerical formats for machine learning models.
-•	StandardScaler: This transformed the data to have a mean of 0 and a standard deviation of 1.
-•	Scipy.stats: provides statistical functions, probability distributions, statistical tests.
-•	Pickle is used to load the trained machine learning model.
-•	Streamlit is used to create an interactive web application.
+1. pandas: for handling and manipulating DataFrames.
+2. ast: to convert strings containing python dictionaries to actual dictionaries.
+3. glop and os: to search and retrieve the file paths from the file system.
+4. numpy:  for handling numerical computation and missing values (e.g., np.NaN).
+5. re: Used for regular expression to process text data (e.g., removing units like ‘CC’, ‘ Kmpl’)
+6. matplotlib: used for creating statistical visualizations.
+7. Seaborn: For creating a statistical visualization.
+8. ‘OneHotEncoder and LabelEncoder’: For encoding categorical variables into numerical formats for machine learning models.
+9. StandardScaler: This transformed the data to have a mean of 0 and a standard deviation of 1.
+10. Scipy.stats: provides statistical functions, probability distributions, statistical tests.
+11. Pickle is used to load the trained machine learning model.
+12. Streamlit is used to create an interactive web application.
 
 ## 3. Converting Unstructured Data into Structured Data
 ### Helper Functions
